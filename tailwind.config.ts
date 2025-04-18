@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				linkedin: {
+					DEFAULT: '#0A66C2', // LinkedIn blue
+					dark: '#313335',    // LinkedIn dark gray
+					light: '#57C7FF',   // Light blue accent
+					bg: '#F3F2EF',      // LinkedIn background gray
+				},
+				streak: {
+					gold: '#FFD700',    // Gold for active streak
+					inactive: '#D3D3D3', // Gray for inactive days
+					warning: '#FF7700',  // Orange for streak at risk
+					danger: '#E51937',   // Red for broken streak
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +96,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-scale': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' },
+				},
+				'count-up': {
+					'0%': { transform: 'translateY(10px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
+				},
+				'flame-flicker': {
+					'0%, 100%': { opacity: '1', transform: 'scale(1)' },
+					'50%': { opacity: '0.8', transform: 'scale(0.95)' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-scale': 'pulse-scale 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'count-up': 'count-up 0.5s ease-out',
+				'flame-flicker': 'flame-flicker 1.5s ease-in-out infinite',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'in': 'count-up 0.5s ease-out',
 			}
 		}
 	},
